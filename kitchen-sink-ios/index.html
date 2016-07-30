@@ -6,7 +6,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>Yes we Park iOS</title>
+    <title>Yes we Park</title>
     <link rel="stylesheet" href="../build/css/framework7.ios.css">
     <link rel="stylesheet" href="../build/css/framework7.ios.colors.css">
     <link rel="stylesheet" href="css/kitchen-sink.css">
@@ -61,13 +61,46 @@
         <p>Long text block goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sem urna, gravida non scelerisque id, fringilla ac velit. Phasellus elementum a ipsum at ornare. Mauris sagittis rhoncus euismod. Integer convallis augue eu lacus ultrices, in dictum elit consequat. Nulla faucibus massa id felis egestas eleifend. Proin consequat dignissim magna ut scelerisque. Vestibulum ac lorem semper, posuere sapien nec, pharetra massa. Nulla a tellus facilisis, sollicitudin quam porta, aliquam lorem. Fusce dignissim eros ac diam molestie, ut ultrices lorem tristique. Ut facilisis augue ac nisi egestas malesuada. Nunc posuere tortor quis eleifend mollis. Aliquam erat volutpat. Donec feugiat elit tellus, nec convallis orci elementum in. Sed urna mi, vestibulum id tempus id, pretium et ante. Pellentesque eget sollicitudin ligula. Phasellus pellentesque velit eu porta suscipit.</p>
       </div>
     </div>
-
+    <div class="panel panel-right panel-reveal layout-dark">
+      <div class="view view-right">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center sliding">Right Panel</div>
+          </div>
+        </div>
+        <div class="pages navbar-through">
+          <div data-page="panel-right1" class="page">
+            <div class="page-content">
+              <div class="content-block">
+                <p>This is a right side panel. You can close it by clicking outsite or on this link: <a href="#" class="close-panel">close me</a>. You can put here anything, even another isolated view, try it:</p>
+              </div>
+              <div class="list-block">
+                <ul>
+                  <li><a href="panel-right2.html" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title">Right panel page 2</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="panel-right3.html" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title">Right panel page 3</div>
+                        </div>
+                      </div></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="views">
       <div class="view view-main">
         <div class="navbar">
           <div class="navbar-inner">
             <div class="left"></div>
-            <div class="center sliding">Framework7</div>
+            <div class="center sliding">Framework8</div>
             <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
           </div>
         </div>
@@ -77,19 +110,19 @@
         <div class="pages navbar-through toolbar-through">
           <div data-page="index" class="page">
             <div class="page-content">
-              <div class="content-block-title">Welcome To Framework7</div>
+              <div class="content-block-title">Welcome To Framework8</div>
               <div class="content-block"><a href="about.html" class="button">About Framework7</a></div>
               <div class="content-block-title">Framework7 Kitchen Sink</div>
-              <div id="map"></div>
               <div class="list-block">
                 <ul>
-                  <li><a href="login.html" class="item-link">
+                  <li><a href="signin.html" class="item-link">
                       <div class="item-content">
                         <div class="item-media"><i class="icon icon-f7"></i></div>
                         <div class="item-inner">
-                          <div class="item-title">Login</div>
+                          <div class="item-title">Sign In</div>
                         </div>
                       </div></a></li>
+
                   <li><a href="accordion.html" class="item-link">
                       <div class="item-content">
                         <div class="item-media"><i class="icon icon-f7"></i></div>
@@ -464,6 +497,5 @@
     </div>
     <script type="text/javascript" src="../build/js/framework7.js"></script>
     <script type="text/javascript" src="js/kitchen-sink.js"></script>
-    <script type="text/javascript" src="js/gmaps.js"></script>
   </body>
 </html>
