@@ -176,15 +176,42 @@ myApp.onPageInit('credit-card', function (page) {
         ]
     });
 
+
     var pickerCode = myApp.picker({
+        input: '#ks-picker-code',
+        rotateEffect: true,
+        cols: [
+            {
+                textAlign: 'center',
+                values: Array.apply(0, Array(10)).map(function (x, y) { return y })
+            },
+            {
+                textAlign: 'center',
+                values: Array.apply(0, Array(10)).map(function (x, y) { return y })
+            },
+            {
+                textAlign: 'center',
+                values: Array.apply(0, Array(10)).map(function (x, y) { return y })
+            },
+        ]
+    });
+
+    /*var pickerCode = myApp.picker({
         input: '#ks-picker-code',
         cols: [
             {
                 textAlign: 'center',
-                values: ['000', '111', '222', '333', '444']
+                values: Array.apply(0, Array(18)).map(function (x, y) {
+                    if(y.toString().length == 1)
+                        return '00'+(y);
+                    if(y.toString().length == 2)
+                        return '0'+(y);
+                    else
+                        return y.toString(); 
+                })
             }
         ]
-    });
+    });*/
 
     // Describe yourself picker
     var pickerNumbers = myApp.picker({
@@ -193,15 +220,42 @@ myApp.onPageInit('credit-card', function (page) {
         cols: [
             {
                 textAlign: 'center',
-                values: ['00', '01', '10', '11']
+                values: Array.apply(0, Array(1000)).map(function (x, y) {
+                    if(y.toString().length == 1)
+                        return '000'+(y);
+                    if(y.toString().length == 2)
+                        return '00'+(y);
+                    if(y.toString().length == 3)
+                        return '0'+(y);
+                    else
+                        return y.toString(); 
+                })
             },
             {
                 textAlign: 'center',
-                values: ['00', '01', '10', '11']
+                values: Array.apply(0, Array(1000)).map(function (x, y) {
+                    if(y.toString().length == 1)
+                        return '000'+(y);
+                    if(y.toString().length == 2)
+                        return '00'+(y);
+                    if(y.toString().length == 3)
+                        return '0'+(y);
+                    else
+                        return y.toString(); 
+                })
             },
             {
                 textAlign: 'center',
-                values: ['00', '01', '10', '11']
+                values: Array.apply(0, Array(1000)).map(function (x, y) {
+                    if(y.toString().length == 1)
+                        return '000'+(y);
+                    if(y.toString().length == 2)
+                        return '00'+(y);
+                    if(y.toString().length == 3)
+                        return '0'+(y);
+                    else
+                        return y.toString(); 
+                })
             },
         ]
     });
