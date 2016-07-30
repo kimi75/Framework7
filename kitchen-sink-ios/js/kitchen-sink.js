@@ -410,20 +410,20 @@ myApp.onPageInit('notifications', function (page) {
 });
 
 /* ===== Login screen page events ===== */
-myApp.onPageInit('account', function (page) {
-  console.log('init account');
-  new GMaps({
-    div: '#map_canvas',
-    lat: -12.043333,
-    lng: -77.028333
-  });
-
-});
-myApp.onPageInit('set', function (page) {
-  console.log('init set');
-
-
-});
+// myApp.onPageInit('account', function (page) {
+//   console.log('init account');
+//   new GMaps({
+//     div: '#map_canvas',
+//     lat: -12.043333,
+//     lng: -77.028333
+//   });
+//
+// });
+// myApp.onPageInit('set', function (page) {
+//   console.log('init set');
+//
+//
+// });
 
 /* ===== Login screen page events ===== */
 myApp.onPageInit('login-screen-embedded', function (page) {
