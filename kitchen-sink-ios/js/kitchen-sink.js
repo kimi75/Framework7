@@ -43,6 +43,41 @@ $$(document).on('pageInit', function (e) {
     if (page.name === 'account') {
       console.log('account');
 
+      L.mapbox.accessToken = 'pk.eyJ1IjoiZG9vbXMiLCJhIjoiY2lyOXI3aWo2MDAzdmlnbHdsOWljejlzbiJ9.HSJcN7AN3rH-BlPh5P4sAA';
+      var geojson = [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [149.1304007,-35.320387]
+          },
+          "properties": {
+            "marker-color": "#3ca0d3",
+            "marker-size": "large",
+            "marker-symbol": "1"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [149.1128911,-35.3203852]
+          },
+          "properties": {
+            "marker-color": "#3ca0d3",
+            "marker-size": "large",
+            "marker-symbol": "2"
+          }
+        }
+      ];
+
+      var mapGeo = L.mapbox.map('map_geo', 'mapbox.streets')
+        .setView([-35.320387,149.1304007], 14);
+      console.log(mapGeo);
+      var myLayer = L.mapbox.featureLayer().setGeoJSON(geojson).addTo(mapGeo);
+      $$('#mapGeo').html(myLayer);
+       mapGeo.scrollWheelZoom.disable();
+
 
         // // We need to get count GET parameter from URL (about.html?count=10)
         // var count = page.query.count;
@@ -197,31 +232,18 @@ myApp.onPageInit('credit-card', function (page) {
         input: '#ks-picker-card',
         cols: [
             {
-                textAlign: 'center',
-                values: ['American Express', 'Master Card', 'VISA']
+              textAlign: 'center',
+              values: ['American Express', 'Master Card', 'VISA']
             }
         ]
     });
 
+/* ===== Account ===== */
+myApp.onPageInit('account', function (page) {
 
-    var pickerCode = myApp.picker({
-        input: '#ks-picker-code',
-        rotateEffect: true,
-        cols: [
-            {
-                textAlign: 'center',
-                values: Array.apply(0, Array(10)).map(function (x, y) { return y })
-            },
-            {
-                textAlign: 'center',
-                values: Array.apply(0, Array(10)).map(function (x, y) { return y })
-            },
-            {
-                textAlign: 'center',
-                values: Array.apply(0, Array(10)).map(function (x, y) { return y })
-            },
-        ]
-    });
+
+
+});
 
     /*var pickerCode = myApp.picker({
         input: '#ks-picker-code',

@@ -414,3 +414,4 @@ div.ks-demo-lazy {
 .ks-facebook-card .card-content-inner {
   padding: 15px 10px;
 }
+.map { position:absolute; top:40px; bottom:0; width:100%; }
