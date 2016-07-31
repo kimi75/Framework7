@@ -17,7 +17,11 @@ myApp.onPageInit('about', function (page) {
         createContentPage();
     });
 });
-
+$$(document).on('pageInit', function (e) {
+  // Page Data contains all required information about loaded and initialized page
+  var page = e.detail.page;
+  console.log(e);
+});
 // Generate dynamic page
 var dynamicPageIndex = 0;
 function createContentPage() {

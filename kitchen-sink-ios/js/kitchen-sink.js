@@ -1,3 +1,4 @@
+console.log("sink file loaded");
 var myApp = new Framework7({
     modalTitle: 'Framework7',
     animateNavBackIcon: true,
@@ -36,6 +37,32 @@ $$(document).on('ajaxComplete', function (e) {
 
 // Callbacks for specific pages when it initialized
 /* ===== Modals Page events  ===== */
+$$(document).on('pageInit', function (e) {
+    var page = e.detail.page;
+    // Code for About page
+    if (page.name === 'account') {
+      console.log('account');
+
+
+        // // We need to get count GET parameter from URL (about.html?count=10)
+        // var count = page.query.count;
+        // // Now we can generate some dummy list
+        // var listHTML = '<ul>';
+        // for (var i = 0; i < count; i++) {
+        //     listHTML += '<li>' + i + '</li>';
+        // }
+        // listHTML += '</ul>';
+        // // And insert generated list to page content
+        // $$(page.container).find('.page-content').append(listHTML);
+    }
+    // Code for Services page
+    if (page.name === 'services') {
+        myApp.alert('Here comes our services!');
+    }
+});
+
+
+
 myApp.onPageInit('modals', function (page) {
     $$('.demo-alert').on('click', function () {
         myApp.alert('Hello!');
@@ -207,7 +234,7 @@ myApp.onPageInit('credit-card', function (page) {
                     if(y.toString().length == 2)
                         return '0'+(y);
                     else
-                        return y.toString(); 
+                        return y.toString();
                 })
             }
         ]
@@ -228,7 +255,7 @@ myApp.onPageInit('credit-card', function (page) {
                     if(y.toString().length == 3)
                         return '0'+(y);
                     else
-                        return y.toString(); 
+                        return y.toString();
                 })
             },
             {
@@ -241,7 +268,7 @@ myApp.onPageInit('credit-card', function (page) {
                     if(y.toString().length == 3)
                         return '0'+(y);
                     else
-                        return y.toString(); 
+                        return y.toString();
                 })
             },
             {
@@ -254,7 +281,7 @@ myApp.onPageInit('credit-card', function (page) {
                     if(y.toString().length == 3)
                         return '0'+(y);
                     else
-                        return y.toString(); 
+                        return y.toString();
                 })
             },
         ]
@@ -274,7 +301,7 @@ myApp.onPageInit('credit-card', function (page) {
                 values: ['2016', '2017', '2018', '2019']
             },
         ]
-    });    
+    });
 
 });
 
