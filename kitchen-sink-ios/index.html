@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../build/css/framework7.ios.colors.css">
     <link rel="stylesheet" href="css/kitchen-sink.css">
     <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox.js/plugins/mapbox-directions.js/v0.4.0/mapbox.directions.css' type='text/css' />
     <link rel="icon" href="img/icon.png">
     <link rel="apple-touch-icon" href="img/icon.png">
   </head>
@@ -61,7 +62,11 @@
         </ul>
       </div>
       <div class="content-block">
-        <p>Long text block goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sem urna, gravida non scelerisque id, fringilla ac velit. Phasellus elementum a ipsum at ornare. Mauris sagittis rhoncus euismod. Integer convallis augue eu lacus ultrices, in dictum elit consequat. Nulla faucibus massa id felis egestas eleifend. Proin consequat dignissim magna ut scelerisque. Vestibulum ac lorem semper, posuere sapien nec, pharetra massa. Nulla a tellus facilisis, sollicitudin quam porta, aliquam lorem. Fusce dignissim eros ac diam molestie, ut ultrices lorem tristique. Ut facilisis augue ac nisi egestas malesuada. Nunc posuere tortor quis eleifend mollis. Aliquam erat volutpat. Donec feugiat elit tellus, nec convallis orci elementum in. Sed urna mi, vestibulum id tempus id, pretium et ante. Pellentesque eget sollicitudin ligula. Phasellus pellentesque velit eu porta suscipit.</p>
+        Yes we park is a product of Go Team<br>
+        Powered by Govhack 2016.<br>
+        The icons used was designed by Freepik and distributed by Flaticon.<br>
+        This software is under the MIT Licence.
+        <!-- <p>Long text block goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sem urna, gravida non scelerisque id, fringilla ac velit. Phasellus elementum a ipsum at ornare. Mauris sagittis rhoncus euismod. Integer convallis augue eu lacus ultrices, in dictum elit consequat. Nulla faucibus massa id felis egestas eleifend. Proin consequat dignissim magna ut scelerisque. Vestibulum ac lorem semper, posuere sapien nec, pharetra massa. Nulla a tellus facilisis, sollicitudin quam porta, aliquam lorem. Fusce dignissim eros ac diam molestie, ut ultrices lorem tristique. Ut facilisis augue ac nisi egestas malesuada. Nunc posuere tortor quis eleifend mollis. Aliquam erat volutpat. Donec feugiat elit tellus, nec convallis orci elementum in. Sed urna mi, vestibulum id tempus id, pretium et ante. Pellentesque eget sollicitudin ligula. Phasellus pellentesque velit eu porta suscipit.</p> -->
       </div>
     </div>
     <div class="panel panel-right panel-reveal layout-dark">
@@ -108,7 +113,14 @@
           </div>
         </div>
         <div class="toolbar">
-          <div class="toolbar-inner"><a href="#" class="link">Dummy Link</a><a href="#" data-popover=".popover-menu" class="open-popover link">Menu</a></div>
+          <div class="toolbar-inner">
+            <div class="text-center col-50"></div>
+            <div class="text-center col-50">
+              <a href="#" class="button open-login-screen easy_start">Easy Start</a>
+              <!-- <a href="#" data-popover=".popover-menu" class="open-popover link">Menu</a> -->
+
+            </div>
+          </div>
         </div>
         <div class="pages navbar-through toolbar-through">
           <div data-page="index" class="page">
@@ -385,6 +397,17 @@
     </div>
     <div class="popup demo-popup">
       <div class="view navbar-fixed">
+        <ul>
+          <li class="accordion-item"><a href="#" class="item-link item-content">
+              <div class="item-inner">
+                <div class="item-title">Lorem Ipsum</div>
+              </div></a>
+            <div class="accordion-item-content">
+              <div class="content-block">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum id neque nec commodo. Sed vel justo at turpis laoreet pellentesque quis sed lorem. Integer semper arcu nibh, non mollis arcu tempor vel. Sed pharetra tortor vitae est rhoncus, vel congue dui sollicitudin. Donec eu arcu dignissim felis viverra blandit suscipit eget ipsum.</p>
+              </div>
+            </div>
+          </li>
         <div class="pages">
           <div class="page">
             <div class="navbar">
@@ -456,39 +479,47 @@
     </div>
     <div class="login-screen">
       <div class="view">
-        <div class="page">
-          <div class="page-content login-screen-content">
-            <div class="login-screen-title">Framework7</div>
-            <form>
-              <div class="list-block">
-                <ul>
-                  <li class="item-content">
-                    <div class="item-inner">
-                      <div class="item-title label">Username</div>
+        <!-- <div class="popup popup-services"> -->
+          <div class="page">
+            <div class="page-content login-screen-content">
+              <div class="login-screen-title">Destination</div>
+              <form>
+                <!-- <div class="content-block-title">Dropdown With Input Expand</div> -->
+                <div class="list-block">
+                  <ul>
+                    <li class="item-content">
+                      <!-- <div class="item-title label">Destination</div> -->
                       <div class="item-input">
-                        <input type="text" name="username" placeholder="Your username">
+                        <input type="text" placeholder="Park Destination" id="autocomplete-dropdown-expand" autocomplete="off"/>
+                      </div>
+                    </li>
+                  </ul><hr>
+                </div>
+                <div class="test-text" style="display:none;">
+                  <div class="card">
+                    <div class="card-header"><img src="img/icons/parked-car.svg" width="60" alt="carparked" />Franklin St </div>
+                    <div class="card-content">
+                      <div class="card-content-inner">
+                        <i>On Street - Lot 101
+                        Number 1019 </i><br>
+                        Free Place : <span class="color-green">79</span><br>
+                        Free Plan : <span style="color:#009688"> 2 Hour</span><br>
+                        Price <span class="color-blue">2$/Hour</span>
                       </div>
                     </div>
-                  </li>
-                  <li class="item-content">
-                    <div class="item-inner">
-                      <div class="item-title label">Password</div>
-                      <div class="item-input">
-                        <input type="password" name="password" placeholder="Your password">
-                      </div>
+                  </div>
+                  <div class="content-block">
+                    <div class="list-block">
+                      <ul>
+                        <li><a href="account.html" style="background-color:#009688"class="button button-big button-fill color-green login_screen_close">Accept</a></li>
+                      </ul>
                     </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="list-block">
-                <ul>
-                  <li><a href="#" class="item-link list-button">Sign In</a></li>
-                </ul>
-                <div class="list-block-label">Some text about login information.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-              </div>
-            </form>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
     <div class="picker-modal picker-modal-demo">
@@ -507,5 +538,7 @@
     <script type="text/javascript" src="../build/js/framework7.js"></script>
     <script type="text/javascript" src="js/kitchen-sink.js"></script>
     <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.js'></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/mapbox-directions.js/v0.4.0/mapbox.directions.js'></script>
+
   </body>
 </html>

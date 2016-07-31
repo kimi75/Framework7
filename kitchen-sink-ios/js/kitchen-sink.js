@@ -41,7 +41,7 @@ $$(document).on('pageInit', function (e) {
     var page = e.detail.page;
     // Code for About page
     if (page.name === 'account') {
-      console.log('account');
+      // console.log('account');
 
       L.mapbox.accessToken = 'pk.eyJ1IjoiZG9vbXMiLCJhIjoiY2lyOXI3aWo2MDAzdmlnbHdsOWljejlzbiJ9.HSJcN7AN3rH-BlPh5P4sAA';
       var geojson = [
@@ -54,7 +54,7 @@ $$(document).on('pageInit', function (e) {
           "properties": {
             "marker-color": "#3ca0d3",
             "marker-size": "large",
-            "marker-symbol": "1"
+            "marker-symbol": "a"
           }
         },
         {
@@ -66,17 +66,57 @@ $$(document).on('pageInit', function (e) {
           "properties": {
             "marker-color": "#3ca0d3",
             "marker-size": "large",
-            "marker-symbol": "2"
+            "marker-symbol": "b"
           }
         }
       ];
 
-      var mapGeo = L.mapbox.map('map_geo', 'mapbox.streets')
-        .setView([-35.320387,149.1304007], 14);
-      console.log(mapGeo);
+      // var mapGeo = L.mapbox.map('map_geo', 'mapbox.streets')
+      //   .setView([-35.320387,149.1304007], 14);
+      // console.log(mapGeo);
+      //  L.mapbox.accessToken = 'pk.eyJ1IjoiZG9vbXMiLCJhIjoiY2lyOXI3aWo2MDAzdmlnbHdsOWljejlzbiJ9.HSJcN7AN3rH-BlPh5P4sAA';
+
+       var mapGeo = L.mapbox.map('map_geo', 'mapbox.streets', {
+           zoomControl: false
+       }).setView([-35.320387,149.1304007], 14);
+
+       L.mapbox.config.FORCE_HTTPS = true;
       var myLayer = L.mapbox.featureLayer().setGeoJSON(geojson).addTo(mapGeo);
       $$('#mapGeo').html(myLayer);
        mapGeo.scrollWheelZoom.disable();
+
+
+
+
+
+      // //  L.mapbox.accessToken = 'pk.eyJ1IjoiZG9vbXMiLCJhIjoiY2lyOXI3aWo2MDAzdmlnbHdsOWljejlzbiJ9.HSJcN7AN3rH-BlPh5P4sAA';
+      //  var map = L.mapbox.map('map_geo', 'mapbox.streets', {
+      //      zoomControl: false
+      //  }).setView([-35.320387,149.1304007], 14);
+
+       // move the attribution control out of the way
+       mapGeo.attributionControl.setPosition('bottomleft');
+
+       // create the initial directions object, from which the layer
+       // and inputs will pull data.
+       var directions = L.mapbox.directions( {
+         id: 'govhack',
+         accessToken: 'sk.eyJ1IjoiZG9vbXMiLCJhIjoiY2lyYTRweHJxMDA0MGlnbHcxMGRzNGV1YSJ9.BwbgQY3t4KxjGIlg2RaixA'
+        });
+
+       var directionsLayer = L.mapbox.directions.layer(directions).addTo(mapGeo);
+
+       var directionsInputControl = L.mapbox.directions.inputControl('inputs', directions)
+           .addTo(mapGeo);
+
+       var directionsErrorsControl = L.mapbox.directions.errorsControl('errors', directions)
+           .addTo(mapGeo);
+
+       var directionsRoutesControl = L.mapbox.directions.routesControl('routes', directions)
+           .addTo(mapGeo);
+
+       var directionsInstructionsControl = L.mapbox.directions.instructionsControl('instructions', directions)
+           .addTo(mapGeo);
 
 
         // // We need to get count GET parameter from URL (about.html?count=10)
@@ -89,6 +129,10 @@ $$(document).on('pageInit', function (e) {
         // listHTML += '</ul>';
         // // And insert generated list to page content
         // $$(page.container).find('.page-content').append(listHTML);
+    }
+    if (page.name === 'destination') {
+        console.log("detina");
+        // myApp.alert('Here comes our services!');
     }
     // Code for Services page
     if (page.name === 'services') {
@@ -316,7 +360,7 @@ myApp.onPageInit('account', function (page) {
         cols: [
             {
                 textAlign: 'center',
-                values: ['01', '02', '03', '04']
+                values: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
             },
             {
                 textAlign: 'center',
@@ -542,6 +586,43 @@ myApp.onPageInit('infinite-scroll', function (page) {
 });
 
 /* ===== Notifications Page ===== */
+
+$$(".login_screen_close").on('click', function(){
+    myApp.closeModal('.login-screen');
+ });
+$$(".easy_start").on('click', function(){
+    // Fruits data demo array
+    //var fruits = ('Apple Apricot Avocado Banana Melon Orange Peach Pear Pineapple').split(' ');
+    console.log("destination");
+    var park = ['Bougainville St', 'Franklin St', 'Furneaux St', 'Flinders Way',
+       'Captain Cook Cres', 'Multi Storey', 'Palmerston Lane'];
+    // Dropdown with input expand
+    var autocompleteDropdownExpand = myApp.autocomplete({
+        input: '#autocomplete-dropdown-expand',
+        openIn: 'dropdown',
+        expandInput: true, // expand input
+        source: function (autocomplete, query, render) {
+            var results = [];
+            if (query.length === 0) {
+                render(results);
+                return;
+            }
+            // Find matched items
+            for (var i = 0; i < park.length; i++) {
+                if (park[i].toLowerCase().indexOf(query.toLowerCase()) >= 0) results.push(park[i]);
+            }
+            // Render items by passing array with result items
+            render(results);
+        },
+        onChange: function(e){
+          // console.log('azeaz');
+          // console.log( e);
+          $$('.test-text')[0].style.display = 'block';
+
+        }
+    });
+});
+
 myApp.onPageInit('notifications', function (page) {
     $$('.ks-notification-simple').on('click', function () {
         myApp.addNotification({
