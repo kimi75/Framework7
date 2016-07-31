@@ -1,16 +1,12 @@
-[![Join the chat at https://gitter.im/nolimits4web/Framework7](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nolimits4web/Framework7)
-[![Build Status](https://travis-ci.org/nolimits4web/Framework7.svg?branch=master)](https://travis-ci.org/nolimits4web/Framework7)
-[![devDependency Status](https://david-dm.org/nolimits4web/framework7/dev-status.svg)](https://david-dm.org/nolimits4web/framework7#info=devDependencies)
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=nolimits4web&url=https://github.com/nolimits4web/framework7/&title=Framework7&language=JavaScript&tags=github&category=software)
+Govhack 2016 Yes We Park
+----
 
-Framework7
-==========
+
 
 Full Featured Mobile HTML Framework For Building iOS & Android Apps
 
 ## Getting Started
-  * [Getting Started Guide](http://www.idangero.us/framework7/get-started/)
-  * Clone/download this repo
+* Clone/download this repo
   * Start building your App from changing Kitchen Sink, or from a clean template from `dist/` folder
 
 ## Server
@@ -110,10 +106,3 @@ If you have questions about Framework7 or want to help others you are welcome to
 
 Documentation available at http://idangero.us/framework7/docs/
 
-## Tutorials
-
-Tutorials available at http://idangero.us/framework7/tutorials/
-
-## Showcase
-
-Appstore apps made with Framework7: http://idangero.us/framework7/showcase/
